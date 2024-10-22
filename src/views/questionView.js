@@ -4,21 +4,22 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 /**
  * Create a full question element
  * @returns {Element}
+ * @param {string} questionText
  */
-export const createQuestionElement = (question) => {
+export const createQuestionElement = (questionText) => {
   const element = document.createElement('div');
 
-  // I use String.raw just to get fancy colors for the HTML in VS Code.
+
   element.innerHTML = String.raw`
-    <h1>${question}</h1>
+ <div class="question-text"><h1>${questionText}</h1></div>
 
-    <ul id="${ANSWERS_LIST_ID}">
-    </ul>
+ <div id="${ANSWERS_LIST_ID}">
+  </div> 
 
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
-      Next question
-    </button>
-  `;
+  <button id="${NEXT_QUESTION_BUTTON_ID}">
+    Next question
+  </button>
+`;
 
   return element;
 };
