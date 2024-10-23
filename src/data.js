@@ -9,221 +9,99 @@
     not by your listeners
 */
 
-export const quizData = {
-  currentQuestionIndex: 0,
-  
-  questions: [
-    {
-      text: 'What is the capital of Spain?',
-      answers: {
-        a: 'Berlin',
-        b: 'Rome',
-        c: 'Paris',
-        d: 'Madrid'
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'What is the largest ocean on earth?',
-      answers: {
-        a: 'Indian Ocean',
-        b: 'Pacific Ocean',
-        c: 'Atlantic Ocean',
-        d: 'Arctic Ocean',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href:
-            'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'How many oceans do we have on earth?',
-      answers: {
-        a: 'two',
-        b: 'three',
-        c: 'one',
-        d: 'five'
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'In which continent is Brazil located?',
-      answers: {
-        a: 'North America',
-        b: 'Africa',
-        c: 'South America',
-        d: 'Asia'
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'What is the official language of Syria?',
-      answers: {
-        a: 'Arabic',
-        b: 'English',
-        c: 'French',
-        d: 'Dutch'
-      },
-      correct: 'a',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'Which of these is the highest mountain in the world?',
-      answers: {
-        a: 'Denali',
-        b: 'Matterhorn',
-        c: 'Everest',
-        d: 'fuji'
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'What is the official religion of Egypt ?',
-      answers: {
-        a: 'Islam',
-        b: 'Christianity',
-        c: 'buddhism',
-        d: 'hinduism'
-      },
-      correct: 'a',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'What is the biggest country in the world?',
-      answers: {
-        a: 'Brazil',
-        b: 'Russia',
-        c: 'Canada',
-        d: 'china'
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'What is the longest river in the world?',
-      answers: {
-        a: 'Nile',
-        b: 'Amazon',
-        c: 'Mississippi',
-        d: 'Danube'
-      },
-      correct: 'a',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    {
-      text: 'which country shares the eastern border of the Netherlands?',
-      answers: {
-        a: 'Germany',
-        b: 'Spain',
-        c: 'Italy',
-        d: 'France'
-      },
-      correct: 'a',
-      selected: null,
-      links: [
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-        {
-          text: 'Geography',
-          href: 'https://www.wikipedia.org/',
-        },
-      ],
-    },
-    
-  ],
-};
+
+export const quizData = [
+  {
+    currentQuestionIndex: 0,
+  },
+  {
+    questionText: 'What is the capital of Spain?',
+    answerText: [
+      ['Berlin', false],
+      ['Rome', false],
+      ['Paris', false],
+      ['Madrid', true],
+    ],
+  },
+  {
+    questionText: 'What is the largest ocean on earth?',
+    answerText: [
+      ['Indian Ocean', false],
+      ['Pacific Ocean', true],
+      ['Atlantic Ocean', false],
+      ['Arctic Ocean', false],
+    ],
+  },
+  {
+    questionText: 'How many oceans do we have on earth?',
+    answerText: [
+      ['one', false],
+      ['thee', false],
+      ['two', false],
+      ['five', true],
+    ],
+  },
+  {
+    questionText: 'In which continent is Brazil located?',
+    answerText: [
+      ['North America', false],
+      ['Asia', false],
+      ['South America', true],
+      ['Africa', false],
+    ],
+  },
+  {
+    questionText: 'What is the official language of Syria?',
+    answerText: [
+      ['English', false],
+      ['Arabic', true],
+      ['Persian', false],
+      ['Dutch', false],
+    ],
+  },
+  {
+    questionText: 'Which of these is the highest mountain in the world?',
+    answerText: [
+      ['Matterhorn', false],
+      ['Denali', false],
+      ['fuji', false],
+      ['Everest', true],
+    ],
+  },
+  {
+    questionText: 'What is the official religion of Egypt?',
+    answerText: [
+      ['Buddhism', false],
+      ['Christianity', false],
+      ['Islam', true],
+      ['hinduism', false],
+    ],
+  },
+  {
+    questionText: 'What is the biggest country in the world?',
+    answerText: [
+      ['Russia', true],
+      ['Canada', false],
+      ['China', false],
+      ['India', false],
+    ],
+  },
+  {
+    questionText: 'What is the longest river in the world?',
+    answerText: [
+      ['Mississippi', false],
+      ['Amazon', false],
+      ['Danube', false],
+      ['Nile', true],
+    ],
+  },
+  {
+    questionText: 'which country shares the eastern border of the Netherlands?',
+    answerText: [
+      ['France', false],
+      ['Germany', true],
+      ['Italy', false],
+      ['Spain', false],
+    ],
+  },
+];
