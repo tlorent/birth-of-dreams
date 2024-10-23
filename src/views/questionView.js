@@ -11,15 +11,17 @@ export const createQuestionElement = (questionText) => {
 
 
   element.innerHTML = String.raw`
- <div class="question-text"><h1>${questionText}</h1></div>
+ <h1>${questionText}</h1>
 
  <div id="${ANSWERS_LIST_ID}">
   </div> 
 
-  <button id="${NEXT_QUESTION_BUTTON_ID}">
-    Next question
-  </button>
+  
 `;
 
   return element;
 };
+
+/* <button id="${NEXT_QUESTION_BUTTON_ID}">
+    Next question
+  </button> */
