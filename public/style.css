@@ -131,3 +131,20 @@ h1 {
   font-size: 26px;
   background-color: #b6ccb9;
 }
+
+
+
+.correct-answer {
+  background-color: green;
+  color: white;
+}
+
+.incorrect-answer {
+  background-color: red;
+  color: white;
+}
+
+.answer-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
