@@ -37,7 +37,7 @@
       questionText: 'How many oceans do we have on earth?',
       answerText: [
         ['one', false],
-        ['thee', false],
+        ['three', false],
         ['two', false],
         ['five', true],
       ],
