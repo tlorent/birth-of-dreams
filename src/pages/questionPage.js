@@ -11,7 +11,7 @@ import { userName } from './welcomePage.js';
 
 export const initQuestionPage = () => {
   let currentQuestionIndex = 0;
-
+  let correctAnswersCount = 0; // Counter to track the number of correct answers
   const initQuestion = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
@@ -56,20 +56,17 @@ export const initQuestionPage = () => {
       
         if (isCorrect) {
           answerElement.classList.add('correct-answer');
+          correctAnswersCount++; // Increment the correct answers counter
         } else {
           answerElement.classList.add('incorrect-answer');
-
-       
         }
 
-       
         nextQuestionButton.disabled = false;
       });
     });
 
     userInterface.appendChild(answersListElement);
 
-   
     const navigationContainer = document.createElement('div');
     navigationContainer.id = NAVIGATION_ID;
     navigationContainer.innerHTML = "";
@@ -88,7 +85,7 @@ export const initQuestionPage = () => {
     if (currentQuestionIndex < quizData.length) {
       initQuestion();
     } else {
-      alert(`Quiz finished ${userName}`);
+      alert(`Quiz finished ${userName}. You answered ${correctAnswersCount} questions correctly!`);
     }
   };
 
