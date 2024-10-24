@@ -94,7 +94,7 @@ export const initQuestionPage = () => {
     }
   };
 
-  initQuestion();
+  initQuestion() ;
 };
 
 initQuestionPage();
