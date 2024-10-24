@@ -7,6 +7,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { userName } from './welcomePage.js';
 
 export const initQuestionPage = () => {
   let currentQuestionIndex = 0;
@@ -87,7 +88,7 @@ export const initQuestionPage = () => {
     if (currentQuestionIndex < quizData.length) {
       initQuestion();
     } else {
-      alert('Quiz finished');
+      alert(`Quiz finished ${userName}`);
     }
   };
 
