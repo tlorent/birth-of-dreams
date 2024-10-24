@@ -83,7 +83,7 @@ export const initQuestionPage = () => {
     if (currentQuestionIndex < quizData.length) {
       initQuestion();
     } else {
-      const userInterface = document.getElementById(USER_INTERFACE_ID);
+      const userInterface = document.getElementById(USER_INTERFACE_ID) ;
       userInterface.innerHTML = ''; 
 
      
