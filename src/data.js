@@ -65,7 +65,7 @@
       answerText: [
         ['Matterhorn', false],
         ['Denali', false],
-        ['fuji', false],
+        ['Fuji', false],
         ['Everest', true],
       ],
     },
@@ -75,7 +75,7 @@
         ['Buddhism', false],
         ['Christianity', false],
         ['Islam', true],
-        ['hinduism', false],
+        ['Hinduism', false],
       ],
     },
     {
