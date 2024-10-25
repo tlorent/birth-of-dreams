@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: center;
   
+  
 }
 
 #answers-list {
@@ -100,13 +101,12 @@ h1 {
 }
 
 #navigation {
-  width: 40%;
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  column-gap: 40px;
-  justify-items: center; 
-  margin-left: auto; 
+  width: 60%;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
   margin-right: auto;
+  justify-items: center; 
 }
 
 #start-quiz-button {
