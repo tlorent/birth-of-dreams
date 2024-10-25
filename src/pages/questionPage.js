@@ -9,9 +9,11 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { userName } from './welcomePage.js';
 
+
+
 export const initQuestionPage = () => {
   let currentQuestionIndex = 0;
-  let correctAnswersCount = 0; // Counter to track the number of correct answers
+  let correctAnswersCount = 0; 
   const initQuestion = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
@@ -56,7 +58,7 @@ export const initQuestionPage = () => {
       
         if (isCorrect) {
           answerElement.classList.add('correct-answer');
-          correctAnswersCount++; // Increment the correct answers counter
+          correctAnswersCount++; 
         } else {
           answerElement.classList.add('incorrect-answer');
         }
@@ -85,8 +87,16 @@ export const initQuestionPage = () => {
     if (currentQuestionIndex < quizData.length) {
       initQuestion();
     } else {
-      alert(`Quiz finished ${userName}. You answered ${correctAnswersCount} questions correctly!`);
-    }
+     
+      const userInterface = document.getElementById(USER_INTERFACE_ID);
+      userInterface.innerHTML = '';
+
+      const finalTextElement = document.createElement('h1');
+      finalTextElement.textContent = `Dear ${userName}, your result is ${correctAnswersCount}/${quizData.length}!`;
+
+      userInterface.appendChild(finalTextElement);
+      };
+    
   };
 
 

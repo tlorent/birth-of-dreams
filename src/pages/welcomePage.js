@@ -21,13 +21,9 @@ export const initWelcomePage = () => {
   .getElementById(START_QUIZ_BUTTON_ID)
   .addEventListener('click', () => {
   userName = nameInput.value;
-  startQuiz();});
-
-  // document
-  //   .getElementById(START_QUIZ_BUTTON_ID)
-  //   .addEventListener('click', startQuiz);
+  initQuestionPage()
+  }
+  );
 };
 
-const startQuiz = () => {
-  initQuestionPage();
-};
+
