@@ -20,7 +20,6 @@ export const initQuestionPage = () => {
 
     const currentQuestion = quizData[currentQuestionIndex];
 
-    
     const scoreElement = document.createElement('h1');
     scoreElement.id = 'score-display';
     scoreElement.innerText = `Score: ${score}/${quizData.length }`;
@@ -87,14 +86,13 @@ export const initQuestionPage = () => {
       const userInterface = document.getElementById(USER_INTERFACE_ID);
       userInterface.innerHTML = ''; 
 
-      
       const finalScoreElement = document.createElement('h1');
       finalScoreElement.innerText = `Quiz finished ${userName}! Your final score: ${score}/${quizData.length }`;
       userInterface.appendChild(finalScoreElement);
     }
   };
 
-  initQuestion() ;
+  initQuestion();
 };
 
 initQuestionPage();
