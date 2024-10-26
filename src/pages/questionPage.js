@@ -42,7 +42,7 @@ export const initQuestionPage = () => {
     }
 
     const skipQuestionButton = document.createElement('button');
-    skipQuestionButton.innerText = "Postponed Question";
+    skipQuestionButton.innerText = "Postpone Question";
     skipQuestionButton.classList.add('next-question-button');
     skipQuestionButton.addEventListener('click', nextQuestion); 
     skipQuestionButton.addEventListener('click', addSkipQuestion);
@@ -64,7 +64,18 @@ export const initQuestionPage = () => {
 
         } else {
           answerElement.classList.add('incorrect-answer');
-        }
+
+          const [correctAnswerText] = currentQuestion.answerText.find(
+            ([, isCorrect]) => isCorrect);
+
+          const correctAnswerElement = Array.from(answersListElement.children).find(
+            (btn) => btn.innerText === correctAnswerText);
+        
+          if (correctAnswerElement) {
+            correctAnswerElement.classList.add('correct-answer');
+          }
+
+        };
 
         nextQuestionButton.disabled = false;
       });
@@ -185,6 +196,16 @@ export const initQuestionPage = () => {
           correctAnswersCount++; 
         } else {
           answerElement.classList.add('incorrect-answer');
+
+          const [correctAnswerText] = currentQuestion.answerText.find(
+            ([, isCorrect]) => isCorrect);
+
+          const correctAnswerElement = Array.from(answersListElement.children).find(
+            (btn) => btn.innerText === correctAnswerText);
+        
+          if (correctAnswerElement) {
+            correctAnswerElement.classList.add('correct-answer');
+          }
         }
 
         nextQuestionButton.disabled = false;
