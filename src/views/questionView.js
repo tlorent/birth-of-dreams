@@ -1,5 +1,5 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { QUESTION_HEADER_ID } from '../constants.js';
 
 /**
  * Create a full question element
@@ -11,7 +11,7 @@ export const createQuestionElement = (questionText) => {
 
 
   element.innerHTML = String.raw`
- <h1>${questionText}</h1>
+ <div id="${QUESTION_HEADER_ID}"><h1>${questionText}</h1></div>
 
  <div id="${ANSWERS_LIST_ID}">
   </div> 

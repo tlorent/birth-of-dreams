@@ -9,7 +9,8 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initWelcomePage, userName } from './welcomePage.js';
 
-export const skipQUestion = [];
+let skipQUestion = [];
+let skipIndex;
 
 export const initQuestionPage = () => {
   let currentQuestionIndex = 0;
@@ -36,7 +37,7 @@ export const initQuestionPage = () => {
 
   
     const skipQuestionButton = document.createElement('button');
-    skipQuestionButton.innerText = "Skip Question";
+    skipQuestionButton.innerText = "Postponed Question";
     skipQuestionButton.classList.add('next-question-button');
     skipQuestionButton.addEventListener('click', nextQuestion); 
     skipQuestionButton.addEventListener('click', addSkipQuestion);
@@ -79,7 +80,7 @@ export const initQuestionPage = () => {
   };
 
   const addSkipQuestion = () => {
-  skipQUestion.push(currentQuestionIndex);
+  skipQUestion.push(currentQuestionIndex-1);
 };
 
   const nextQuestion = () => {
@@ -96,6 +97,7 @@ export const initQuestionPage = () => {
 
       const finalTextElement = document.createElement('h1');
       finalTextElement.textContent = `Dear ${userName}, your result is ${correctAnswersCount}/${quizData.length}!`;
+      finalTextElement.style.color = "black";
 
       const goBackButton = document.createElement('button');
       goBackButton.classList.add('next-question-button');
@@ -117,12 +119,13 @@ export const initQuestionPage = () => {
     userInterface.innerHTML = '';
     const skipAnswerText = document.createElement('h1');
     skipAnswerText.textContent = `Dear ${userName}! You result is ${correctAnswersCount}/${quizData.length}!
-    But you didn't respond to ${skipQUestion.length+1} questions. Would you like to try again to answer these questions?`;
+    But you postponed answering ${skipQUestion.length+1} questions. Would you like to try again to answer these questions?`;
+    skipAnswerText.style.color = "black";
     userInterface.appendChild(skipAnswerText);
     
     const tryAgainButton = document.createElement('button');
     tryAgainButton.classList.add('next-question-button');
-    tryAgainButton.innerText = "Try to answer again";
+    tryAgainButton.innerText = "Answer Postponed Questions";
     tryAgainButton.addEventListener('click', tryAgainAnswer);
 
     const finishButton = document.createElement('button');
@@ -142,7 +145,7 @@ export const initQuestionPage = () => {
     
     
     const tryAgainAnswer = () => {
-        let skipIndex = 0;
+        skipIndex = 0;
         const initSkipQuestion = () => {
         const userInterface = document.getElementById(USER_INTERFACE_ID);
         userInterface.innerHTML = '';
@@ -181,10 +184,11 @@ export const initQuestionPage = () => {
   
 
     const nextQuestionButton = document.createElement('button');
-    nextQuestionButton.innerText = "Next Skipped Question";
+    nextQuestionButton.innerText = "Next Postponed Question";
     nextQuestionButton.classList.add('next-question-button');
     nextQuestionButton.style.width = '30%';
     nextQuestionButton.style.display = 'flex';
+    nextQuestionButton.style.marginTop = '40px';
     nextQuestionButton.style.marginLeft = 'auto';
     nextQuestionButton.style.marginRight = 'auto';
     nextQuestionButton.style.alignItems = 'center';
@@ -196,12 +200,12 @@ export const initQuestionPage = () => {
       if (skipIndex < skipQUestion.length) {
         initSkipQuestion();
       } else {
-        
         const userInterface = document.getElementById(USER_INTERFACE_ID);
         userInterface.innerHTML = '';
         const finalTextElement = document.createElement('h1');
         finalTextElement.textContent = `Dear ${userName}, your result is ${correctAnswersCount}/${quizData.length}!`;
-        
+        finalTextElement.style.color = "black";
+
       const goBackButton = document.createElement('button');
       goBackButton.classList.add('next-question-button');
       goBackButton.innerText = "Go Back";
