@@ -1,4 +1,5 @@
 
+
 import {
   ANSWERS_LIST_ID,
   NAVIGATION_ID,
@@ -7,6 +8,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+
 import { initWelcomePage, userName } from './welcomePage.js';
 
 let skipQUestion = [];
@@ -15,54 +17,51 @@ let skipIndex;
 export const initQuestionPage = () => {
   let currentQuestionIndex = 0;
   let correctAnswersCount = 0; 
+
   const initQuestion = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
-    userInterface.innerHTML = '';
+    userInterface.innerHTML = ''; 
 
-   
     const currentQuestion = quizData[currentQuestionIndex];
+
     const questionElement = createQuestionElement(currentQuestion.questionText);
     userInterface.appendChild(questionElement);
 
     const answersListElement = document.createElement('div');
     answersListElement.id = ANSWERS_LIST_ID;
-    answersListElement.innerHTML = "" ;
+    answersListElement.innerHTML = '';
 
-    
     const nextQuestionButton = document.createElement('button');
-    nextQuestionButton.innerText = "Next Question";
+    nextQuestionButton.innerText = 'Next Question';
     nextQuestionButton.classList.add('next-question-button');
-    nextQuestionButton.disabled = true; 
+    nextQuestionButton.disabled = true;
     nextQuestionButton.addEventListener('click', nextQuestion);
 
     if (currentQuestionIndex === quizData.length-1) {
       nextQuestionButton.innerText = "Finish Quiz!";
     }
 
-  
     const skipQuestionButton = document.createElement('button');
     skipQuestionButton.innerText = "Postponed Question";
     skipQuestionButton.classList.add('next-question-button');
     skipQuestionButton.addEventListener('click', nextQuestion); 
     skipQuestionButton.addEventListener('click', addSkipQuestion);
 
-   
     currentQuestion.answerText.forEach(([answerText, isCorrect]) => {
       const answerElement = createAnswerElement(answerText);
       answerElement.classList.add('answer-btn');
       answersListElement.appendChild(answerElement);
 
-     
       answerElement.addEventListener('click', () => {
-       
-        document.querySelectorAll('.answer-btn').forEach(btn => {
+        document.querySelectorAll('.answer-btn').forEach((btn) => {
           btn.disabled = true;
         });
 
-      
         if (isCorrect) {
           answerElement.classList.add('correct-answer');
+
           correctAnswersCount++; 
+
         } else {
           answerElement.classList.add('incorrect-answer');
         }
@@ -75,18 +74,20 @@ export const initQuestionPage = () => {
 
     const navigationContainer = document.createElement('div');
     navigationContainer.id = NAVIGATION_ID;
-    navigationContainer.innerHTML = "";
-    
+
+    navigationContainer.innerHTML = '';
+
     navigationContainer.appendChild(skipQuestionButton);
     navigationContainer.appendChild(nextQuestionButton);
-    
+
     userInterface.appendChild(navigationContainer);
   };
+
 
   const addSkipQuestion = () => {
   skipQUestion.push(currentQuestionIndex-1);
 };
-
+  
   const nextQuestion = () => {
     currentQuestionIndex++;
   

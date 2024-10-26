@@ -36,10 +36,10 @@
     {
       questionText: 'How many oceans do we have on earth?',
       answerText: [
-        ['one', false],
-        ['three', false],
-        ['two', false],
-        ['five', true],
+        ['One', false],
+        ['Three', false],
+        ['Two', false],
+        ['Five', true],
       ],
     },
     {
@@ -52,7 +52,7 @@
       ],
     },
     {
-      questionText: 'What is the official language of Syria?',
+      questionText: 'What is the official language of Syria?', 
       answerText: [
         ['English', false],
         ['Arabic', true],
