@@ -97,7 +97,7 @@
       ],
     },
     {
-      questionText: 'which country shares the eastern border of the Netherlands?',
+      questionText: 'Which country shares the eastern border of the Netherlands?',
       answerText: [
         ['France', false],
         ['Germany', true],
