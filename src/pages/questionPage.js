@@ -137,6 +137,7 @@ export const initQuestionPage = () => {
     finishButton.classList.add('next-question-button');
     finishButton.innerText = "Finish";
     finishButton.addEventListener('click', initWelcomePage);
+    finishButton.addEventListener('click', zeroSkipQuestion);
 
 
     const navigationContainer = document.createElement('div');
@@ -150,7 +151,10 @@ export const initQuestionPage = () => {
     }
     };
     
-    
+    let zeroSkipQuestion = () => {
+      skipQUestion.splice(0, skipQUestion.length)
+    };
+
     const tryAgainAnswer = () => {
         skipIndex = 0;
         const initSkipQuestion = () => {
@@ -230,6 +234,7 @@ export const initQuestionPage = () => {
       goBackButton.style.alignItems = 'center';
       goBackButton.style.justifyContent = 'center';
       goBackButton.addEventListener('click', initWelcomePage);
+      goBackButton.addEventListener('click', zeroSkipQuestion);
 
       userInterface.appendChild(finalTextElement);
       userInterface.appendChild(goBackButton);

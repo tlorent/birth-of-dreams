@@ -85,7 +85,6 @@ h1 {
   border: #a62e54 2px solid;
   border-radius: 30px;
   font-size: 20px;
-  /* margin: 20px; */
   box-sizing: border-box;
 }
 
@@ -109,7 +108,6 @@ h1 {
 }
 
 #navigation {
-  /* background-color: #d5d5d5; */
   width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
