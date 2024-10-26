@@ -35,6 +35,10 @@ export const initQuestionPage = () => {
     nextQuestionButton.disabled = true; 
     nextQuestionButton.addEventListener('click', nextQuestion);
 
+    if (currentQuestionIndex === quizData.length-1) {
+      nextQuestionButton.innerText = "Finish Quiz!";
+    }
+
   
     const skipQuestionButton = document.createElement('button');
     skipQuestionButton.innerText = "Postponed Question";
@@ -137,6 +141,8 @@ export const initQuestionPage = () => {
     const navigationContainer = document.createElement('div');
     navigationContainer.id = NAVIGATION_ID;
     navigationContainer.innerHTML = "";
+    navigationContainer.style.marginTop = '80px';
+    navigationContainer.style.marginBottom = '40px';
     navigationContainer.appendChild(tryAgainButton);
     navigationContainer.appendChild(finishButton);
     userInterface.appendChild(navigationContainer);
@@ -194,6 +200,12 @@ export const initQuestionPage = () => {
     nextQuestionButton.style.alignItems = 'center';
     nextQuestionButton.style.justifyContent = 'center';
     nextQuestionButton.disabled = true; 
+
+    if (skipIndex === skipQUestion.length-1) {
+      nextQuestionButton.innerText = "Finish Quiz!";
+    }
+
+
     nextQuestionButton.addEventListener('click', () => {
       skipIndex++;
 
@@ -211,6 +223,7 @@ export const initQuestionPage = () => {
       goBackButton.innerText = "Go Back";
       goBackButton.style.width = '30%';
       goBackButton.style.display = 'flex';
+      goBackButton.style.marginTop = '80px';
       goBackButton.style.marginLeft = 'auto';
       goBackButton.style.marginRight = 'auto';
       goBackButton.style.alignItems = 'center';
